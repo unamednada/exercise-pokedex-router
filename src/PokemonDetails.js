@@ -8,7 +8,7 @@ class PokemonDetails extends React.Component {
     const { id: curPkm } = this.props.match.params;
     const { pokemons, handleFavourite } = this.props;
     const pokemon = pokemons.find(({ id }) => id === +curPkm);
-    const { name, summary, foundAt } = pokemon;
+    const { name, summary, foundAt, favourite } = pokemon;
 
     const pickFavourite = () => {
       handleFavourite(curPkm);
@@ -36,7 +36,7 @@ class PokemonDetails extends React.Component {
             </div>
           </div>
           <label htmlFor="favourite">
-            <input type="checkbox" id="favourite" onChange={pickFavourite} />
+            <input type="checkbox" id="favourite" onChange={pickFavourite} checked={favourite}/>
           Favourite Pokemon!
           </label>
         </div>
