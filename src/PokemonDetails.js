@@ -23,7 +23,6 @@ class PokemonDetails extends React.Component {
           ))}
           <h3>For more info, access <span><a href={moreInfo}>Bulbapedia</a></span></h3>
         </div>
-        <p><Link to="/">Voltar</Link></p>
       </div>
     )
   }

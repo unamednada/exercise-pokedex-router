@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+.nav-btn {
+  padding: 1%;
+  background-color: lightblue;
+  border: 1px solid grey;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
