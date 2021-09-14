@@ -8,6 +8,7 @@ import PokemonDetails from './PokemonDetails';
 function App() {
   return (
     <div className="App">
+      <h1>Pokedex</h1>
       <BrowserRouter>
         <Switch>
           <Route path="/pokemon-details/:id" render={(props) => <PokemonDetails {...props} pokemons={pokemons} />} />

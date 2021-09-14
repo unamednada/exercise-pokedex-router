@@ -9,7 +9,6 @@ class PokemonDetails extends React.Component {
     const pokemon = pokemons.find(({ id }) => id === +curPkm);
     return (
       <div className="pokedex">
-        <h1>{pokemon.name}</h1>
         <Pokemon pokemon={pokemon} />
       </div>
     )
