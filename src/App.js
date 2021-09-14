@@ -11,7 +11,10 @@ function App() {
     <div className="App">
       <h1>Pokedex</h1>
       <BrowserRouter>
-        <Link to="/">Home</Link>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
         <Switch>
           <Route path="/pokemon-details/:id" render={(props) => <PokemonDetails {...props} pokemons={pokemons} />} />
           <Route path="/about" component={About} />
