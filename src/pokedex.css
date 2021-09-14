@@ -27,3 +27,15 @@
   margin: 10px;
   background-color: orange;
 }
+
+.locations-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0 20% 5% 20%;
+}
+
+
+h2 {
+  margin-top: 2%;
+}
