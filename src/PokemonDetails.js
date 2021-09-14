@@ -6,19 +6,24 @@ class PokemonDetails extends React.Component {
     const { pokemons } = this.props;
     const { id: curPokemon } = this.props.match.params;
     const pokemon = pokemons.find((pkm) => pkm.id === +curPokemon);
-    console.log(pokemon);
     const { name, foundAt, image, moreInfo, summary } = pokemon;
     return (
       <div>
-        <p>Pokedex completa</p>
+        <h2>{name}</h2>
+        <img src={image} alt={name} />
         <div>
-          <p>{name}</p>
-          {foundAt.map(({ location }) => <p>{location}</p>)}
-          <img src={image} alt="" />
-          <p>{moreInfo}</p>
+          <h3>Bio</h3>
           <p>{summary}</p>
-          <p><Link to="/">Voltar</Link></p>
+          <h3>Location</h3>
+          {foundAt.map(({ location, map }) => (
+            <div>
+              <h4>Found in {location}</h4>
+              <img src={map} alt={location} />
+            </div>
+          ))}
+          <h3>For more info, access <span><a href={moreInfo}>Bulbapedia</a></span></h3>
         </div>
+        <p><Link to="/">Voltar</Link></p>
       </div>
     )
   }
