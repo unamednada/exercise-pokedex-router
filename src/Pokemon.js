@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import './pokemon.css';
 
 class Pokemon extends React.Component {
@@ -13,7 +13,7 @@ class Pokemon extends React.Component {
           <p>
             Average weight: {`${averageWeight.value} ${averageWeight.measurementUnit}`}
           </p>
-          <p><Link to={`/pokemon-details/${id}`}>More Details</Link></p>
+          <Route exact path="/" render={() => <p><Link to={`/pokemon-details/${id}`}>More Details</Link></p>} />
         </div>
         <img src={image} alt={`${name} sprite`} />
       </div>
