@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from './Pokemon';
+import Pokemon from './Pokemon.js';
 import Button from './Button';
 import './pokedex.css';
 
