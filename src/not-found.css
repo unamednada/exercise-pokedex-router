@@ -1,0 +1,9 @@
+.not-found {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.not-found img {
+  border-radius: 50%;
+  max-width: 500px;
+}
