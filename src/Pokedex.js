@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from './Pokemon';
+import Pokemon from './Pokemon.js';
 import Button from './Button';
 import './pokedex.css';
 
@@ -62,7 +62,7 @@ class Pokedex extends React.Component {
           className="pokedex-button"
           onClick={() => this.nextPokemon(filteredPokemons.length)}
           disabled={filteredPokemons.length <= 1}>
-          Próximo pokémon
+          Next pokémon
         </Button>
       </div>
     );

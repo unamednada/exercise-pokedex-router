@@ -1,3 +1,21 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.link {
+  color: red;
+  text-decoration: none;
+}
+
+.link:hover {
+  font-weight: 700;
 }
