@@ -7,24 +7,48 @@ import PokemonDetails from './PokemonDetails';
 import About from './About';
 import NotFound from './NotFound';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Pokedex</h1>
-      <BrowserRouter>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-        </nav>
-        <Switch>
-          <Route path="/pokemon-details/:id" render={(props) => <PokemonDetails {...props} pokemons={pokemons} />} />
-          <Route path="/about" component={About} />
-          <Route exact path="/" render={() => <Pokedex pokemons={pokemons} /> } />
-          <Route path="/" component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pokemons: pokemons.map((pokemon) => ({...pokemon, favourite: false})),
+    }
+    this.handleFavourite = this.handleFavourite.bind(this);
+  }
+
+  handleFavourite(id) {
+    this.setState((state) => ({
+      pokemons: state.pokemons.map((pokemon) => {
+        if (pokemon.id === +id) {
+          if (pokemon.favourite) return {...pokemon, favourite: false};
+          return {...pokemon, favourite: true}
+        } 
+        return {...pokemon}
+      })
+    }))
+  }
+
+  render() {
+    const { pokemons } = this.state;
+    return (
+      <div className="App">
+        <h1>Pokedex</h1>
+        <BrowserRouter>
+          <nav>
+            <Link to="/" className="link">Home</Link>
+            <Link to="/about" className="link">About</Link>
+          </nav>
+          <Switch>
+            <Route path="/pokemon-details/:id" render={(props) => <PokemonDetails {...props} pokemons={pokemons} handleFavourite={this.handleFavourite}/>} />
+            <Route path="/about" component={About} />
+            <Route exact path="/" render={() => <Pokedex pokemons={pokemons} /> } />
+            <Route path="/" component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  
 }
 
 export default App;

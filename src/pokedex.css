@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 10px 10px;
   align-items: center;
+  margin: 40px;
 }
 
 .pokedex-buttons-panel {
@@ -37,5 +37,22 @@
 
 
 h2 {
-  margin-top: 2%;
+  margin: 2% auto;
+}
+
+.details {
+  text-align: center;
+}
+
+label {
+  padding: 20px;
+  font-weight: 700;
+  color: red;
+}
+
+label:hover {
+  color: white;
+  background-color: red;
+  border-radius: 12px;
+  cursor: pointer;
 }

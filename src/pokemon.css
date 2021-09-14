@@ -9,3 +9,9 @@
   border-radius: 10px;
   padding: 2% 4%;
 }
+
+.favourite {
+  max-width: 20px;
+  align-self: flex-start;
+  justify-self: flex-end;
+}
